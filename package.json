@@ -1,0 +1,20 @@
+{
+  "name": "bbctesttask",
+  "version": "1.0.0",
+  "description": "Testing exercise for Senior SEIT position",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "author": "Mykola Kolisnyk",
+  "license": "ISC",
+  "dependencies": {
+    "bbctesttask": "file:"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.9.0",
+    "axios": "^1.7.7",
+    "chai": "^5.1.1"
+  }
+}
