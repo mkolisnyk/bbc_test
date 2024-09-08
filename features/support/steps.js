@@ -40,7 +40,7 @@ Then('I should see the {string} field is never null or empty for all items', fun
 
 Then('the {string} in {string} for every item is always {string}', function (field, item, value) {
     world.resp.data.schedule.elements.forEach((element) => {
-        expect(element[item][field]).to.equal(value);
+        expect(`${element[item][field]}`).to.equal(`${value}`);
     });
 });
 
