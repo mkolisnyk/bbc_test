@@ -31,27 +31,27 @@ Then('I should see the {string} value in the response header', (header) => {
     expect(Object.keys(world.resp.headers)).to.include(header.toLowerCase());
 });
 
-Then('I should see the {string} field is never null or empty for all items', function (field) {
+Then('I should see the {string} field is never null or empty for all items', (field) => {
     world.resp.data.schedule.elements.forEach((element) => {
         expect(element[field]).to.be.not.null;
         expect(element[field]).to.be.not.empty;
     });
 });
 
-Then('the {string} in {string} for every item is always {string}', function (field, item, value) {
+Then('the {string} in {string} for every item is always {string}', (field, item, value) => {
     world.resp.data.schedule.elements.forEach((element) => {
         expect(`${element[item][field]}`).to.equal(`${value}`);
     });
 });
 
-Then('I should see the {string} field in {string} is never null or empty for any schedule item', function (field, section) {
+Then('I should see the {string} field in {string} is never null or empty for any schedule item', (field, section) => {
     world.resp.data.schedule.elements.forEach((element) => {
         expect(element[section][field]).to.be.not.null;
         expect(element[section][field]).to.be.not.empty;
     });
 });
 
-Then('I should see the only one episode in the list has {string} field in {string} as {string}', function (field, section, value) {
+Then('I should see the only one episode in the list has {string} field in {string} as {string}', (field, section, value) => {
     let liveCount = 0;
     world.resp.data.schedule.elements.forEach((element) => {
         if (`${element[section][field]}` == value) {
@@ -61,7 +61,7 @@ Then('I should see the only one episode in the list has {string} field in {strin
     expect(liveCount).to.equal(1);
 });
 
-Then('I should see the {string} date value is before the {string} date', function (start, end) {
+Then('I should see the {string} date value is before the {string} date', (start, end) => {
     world.resp.data.schedule.elements.forEach((element) => {
         const startDate = Date.parse(element[start]);
         const endDate = Date.parse(element[end]);
